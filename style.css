@@ -82,7 +82,7 @@ ul {
 
 /* ------index.html------- */
 body {
-  font-family: Roboto, "sans-serif";
+  font-family: Roboto, 'sans-serif';
   letter-spacing: 0.02em;
   font-weight: 500;
   margin: 0;
@@ -147,7 +147,7 @@ span.footer-logo-span {
   color: var(--accent-color);
 }
 .header-link.current::after {
-  content: "";
+  content: '';
   position: absolute;
 
   bottom: -1px;
@@ -403,6 +403,7 @@ span.footer-logo-span {
   outline: none;
   border: 1px solid var(--color-ocean);
 }
+/* --------------------modal------------------------------ */
 .backdrop {
   position: fixed;
   top: 0;
@@ -426,6 +427,11 @@ span.footer-logo-span {
 }
 
 .modal {
+  padding-top: 72px;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-bottom: 24px;
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -471,7 +477,126 @@ span.footer-logo-span {
 .modal-btn:active .modal-btn-svg {
   fill: white;
 }
+.modal__title {
+  display: block;
+  text-align: center;
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  color: var(--primary-color);
+}
+.order-form {
+  margin: 0 auto;
+}
+.order-form__group {
+  position: relative;
+}
+.order-form__label {
+  display: block;
+  margin-bottom: 4px;
 
+  color: var(--color-light-slate);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+}
+.label-name {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.04em;
+}
+.order-form__input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding-left: 44px;
+  margin-bottom: 8px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color var(--trns-main);
+}
+.order-form__input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+.order-form__input:focus + .order-form__input_icon {
+  fill: var(--accent-color);
+}
+.order-form__input_icon {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+  transition: fill var(--trns-main);
+}
+.order-form__textarea {
+  height: 120px;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  resize: none;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color var(--trns-main);
+}
+.order-form__textarea::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(16 / 12);
+  color: rgba(117, 117, 117, 0.5);
+  letter-spacing: 0.04em;
+}
+.order-form__textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+.order-form__agreement {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.order-form_agreement_text {
+  display: inline-block;
+  margin-left: 8px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(16 / 12);
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+
+.order-form_agreement_link {
+  font-size: 13px;
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+.order-form__agreement_input:checked
+  + .order-form__checkbox
+  > .order-form__checkbox_checked {
+  opacity: 1;
+}
+.order-form__checkbox_checked {
+  opacity: 0;
+  transition: opacity var(--trns-main);
+}
+.order-form__button {
+  margin: 0 auto;
+  text-align: center;
+  width: 169px;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  letter-spacing: 0.04em;
+}
 /* ------portfolio.html------- */
 .main-page {
   padding-top: 120px;
@@ -649,8 +774,7 @@ span.footer-logo-span {
 .footer-form-container {
   margin-left: auto;
 }
-.subscription-form {
-}
+
 .subscription-form__label {
   display: block;
   color: var(--white-color);
@@ -661,6 +785,7 @@ span.footer-logo-span {
   gap: 24px;
 }
 .subscripition-form__input {
+  display: block;
   height: 40px;
   width: 264px;
 
@@ -673,10 +798,18 @@ span.footer-logo-span {
 }
 .subscripition-form__button {
   display: flex;
-  padding: 8px 24px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 24px;
+
+  transition: background-color var(--trns-main);
 }
+.subscripition-form__button:hover,
+.subscripition-form__button:focus {
+  background-color: var(--color-ocean);
+}
+
 .subscripition-form__input:focus,
 .subscripition-form__input:focus-visible {
   border: 1px solid white;
