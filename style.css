@@ -324,29 +324,17 @@ span.footer-logo-span {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
+  width: 264px;
 }
 @media screen and (max-width: 767px) {
-  .team-item {
-    --items: 1;
-    --container-width: 428px;
-    width: calc(
-      ((var(--container-width)) - var(--indent) * (var(--items) - 1)) /
-        var(--items)
-    );
-  }
-
   .team-item:not(:last-child) {
     margin-bottom: 72px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 @media screen and (min-width: 768px) {
   .team-item {
-    --items: 2;
-    --container-width: 768px;
-    width: calc(
-      ((var(--container-width)) - var(--indent) * (var(--items) - 1)) /
-        var(--items)
-    );
   }
 }
 @media screen and (min-width: 1200px) {
